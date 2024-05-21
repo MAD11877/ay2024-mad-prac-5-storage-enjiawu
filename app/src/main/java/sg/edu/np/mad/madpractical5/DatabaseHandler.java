@@ -77,7 +77,7 @@ public class DatabaseHandler extends SQLiteOpenHelper{
     public void updateUser(User user){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
-        values.put(COLUMN_FOLLOWED,user.isFollowed());
+        values.put(COLUMN_FOLLOWED,!user.isFollowed());
         db.update(TABLE_USERS,values,COLUMN_ID + " = ?",new String[] {String.valueOf(user.getId())});
     }
 }
