@@ -62,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
              @Override
              public void onClick(View v) {
                  isFollowing = !isFollowing;
+                 user.setFollowed(isFollowing);
                  dbHandler.updateUser(user);
                  if(isFollowing){
                      btnFollow.setText("Follow");
