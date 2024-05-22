@@ -28,8 +28,6 @@ public class MainActivity extends AppCompatActivity {
         });
         DatabaseHandler dbHandler = new DatabaseHandler(this, null, null, 1);
 
-        User user = new User("John Doe", "MAD Developer", 1, false);
-
         //Get the TextViews and Button from the layout
         TextView tvName = findViewById(R.id.tvName);
         TextView tvDescription = findViewById(R.id.tvDescription);
@@ -41,6 +39,8 @@ public class MainActivity extends AppCompatActivity {
         String description = receivingEnd.getStringExtra("description");
         String followed = receivingEnd.getStringExtra("followed");
         String id = receivingEnd.getStringExtra("id");
+
+        User user = dbHandler.getUser(name);
 
         //Set the TextViews with the User's name, description and default button message
         tvName.setText(name);

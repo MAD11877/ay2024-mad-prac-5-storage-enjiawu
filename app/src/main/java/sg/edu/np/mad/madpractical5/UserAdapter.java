@@ -55,10 +55,8 @@ public class UserAdapter extends RecyclerView.Adapter<UserViewHolder>{
                         .setPositiveButton("View", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
-                                Random rand = new Random();
-                                int randomNum = rand.nextInt(999999);
                                 Intent goToMainActivity  = new Intent(context, MainActivity.class);
-                                goToMainActivity .putExtra("name", user.getName() + randomNum);
+                                goToMainActivity .putExtra("name", user.getName());
                                 goToMainActivity .putExtra("description", user.getDescription());
                                 goToMainActivity .putExtra("followed", user.isFollowed());
                                 goToMainActivity .putExtra("id", user.getId());
