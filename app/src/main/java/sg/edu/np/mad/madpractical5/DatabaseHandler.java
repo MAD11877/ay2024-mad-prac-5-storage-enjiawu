@@ -61,7 +61,7 @@ public class DatabaseHandler extends SQLiteOpenHelper{
     public void addUser(User user){
         ContentValues values = new ContentValues();
         values.put(COLUMN_NAME, user.getName());
-        values.put(COLUMN_FOLLOWED, user.getFollowing());
+        values.put(COLUMN_FOLLOWED, user.getFollowed());
         values.put(COLUMN_DESCRIPTION, user.getDescription());
         SQLiteDatabase db = this.getWritableDatabase();
 
@@ -92,7 +92,7 @@ public class DatabaseHandler extends SQLiteOpenHelper{
     public void updateUser(User user){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
-        values.put(COLUMN_FOLLOWED,user.getFollowing());
+        values.put(COLUMN_FOLLOWED,user.getFollowed());
         db.update(TABLE_USERS,values,COLUMN_ID + "=?", new String[] {String.valueOf(user.getId())});
     }
 

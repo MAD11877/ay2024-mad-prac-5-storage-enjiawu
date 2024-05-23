@@ -58,7 +58,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserViewHolder>{
                                 Intent goToMainActivity  = new Intent(context, MainActivity.class);
                                 goToMainActivity .putExtra("name", user.getName());
                                 goToMainActivity .putExtra("description", user.getDescription());
-                                goToMainActivity .putExtra("followed", user.isFollowed());
+                                goToMainActivity .putExtra("followed", user.getFollowed());
                                 goToMainActivity .putExtra("id", user.getId());
                                 v.getContext().startActivity(goToMainActivity);
                             }

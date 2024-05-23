@@ -40,7 +40,7 @@ public class User {
         this.id = id;
     }
 
-    public boolean getFollowing() {
+    public boolean getFollowed() {
         return followed;
     }
 
